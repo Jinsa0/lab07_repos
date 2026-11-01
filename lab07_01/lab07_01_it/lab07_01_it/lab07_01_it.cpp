@@ -64,16 +64,16 @@ void Change(int** a, const int col1, const int col2, const int rowCount)
 	}
 }
 
-void Calc(int** a, const int rowCount, const int colCount, int& sum, int& count)
+void Calc(int** a, const int rowCount, const int colCount, int& S, int& k)
 {
-	sum = 0;
-	count = 0;
+	S = 0;
+	k = 0;
 	for (int i = 0; i < rowCount; i++)
 		for (int j = 0; j < colCount; j++)
 			if (a[i][j] % 3 == 0 && !(a[i][j] < 0))
 			{
-				sum += a[i][j];
-				count++;
+				S += a[i][j];
+				k++;
 				a[i][j] = 0;
 			}
 }
@@ -98,12 +98,12 @@ int main()
 	Sort(a, rowCount, colCount);
 	Print(a, rowCount, colCount);
 
-	int sum = 0;
-	int count = 0;
+	int S = 0;
+	int k = 0;
 
-	Calc(a, rowCount, colCount, sum, count);
-	cout << "S = " << sum << endl;
-	cout << "k = " << count << endl;
+	Calc(a, rowCount, colCount, S, k);
+	cout << "S = " << S << endl;
+	cout << "k = " << k << endl;
 
 	Print(a, rowCount, colCount);
 
