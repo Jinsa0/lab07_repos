@@ -78,7 +78,6 @@ int main()
 	cout << "n = "; cin >> n;
 
 	int** a = new int* [k];
-
 	for (int i = 0; i < k; i++)
 		a[i] = new int[n];
 
